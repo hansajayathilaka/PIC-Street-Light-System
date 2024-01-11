@@ -2161,11 +2161,11 @@ void Lcd_Port(char a)
 }
 void Lcd_Cmd(char a)
 {
- RD2 = 0;
+ RC6 = 0;
  Lcd_Port(a);
- RD3 = 1;
+ RC7 = 1;
         _delay((unsigned long)((4)*(8000000/4000.0)));
-        RD3 = 0;
+        RC7 = 0;
 }
 
 void Lcd_Clear()
@@ -2221,15 +2221,15 @@ void Lcd_Write_Char(char a)
    char temp,y;
    temp = a&0x0F;
    y = a&0xF0;
-   RD2 = 1;
+   RC6 = 1;
    Lcd_Port(y>>4);
-   RD3 = 1;
+   RC7 = 1;
    _delay((unsigned long)((40)*(8000000/4000000.0)));
-   RD3 = 0;
+   RC7 = 0;
    Lcd_Port(temp);
-   RD3 = 1;
+   RC7 = 1;
    _delay((unsigned long)((40)*(8000000/4000000.0)));
-   RD3 = 0;
+   RC7 = 0;
 }
 
 void Lcd_Write_String(char *a)
@@ -2298,9 +2298,14 @@ typedef struct _Pin {
     volatile unsigned char *port;
     int pin;
 } Pin;
-
+# 77 "main.c"
 void main(void) {
     unsigned int a;
+
+
+    TRISD = 0x00;
+    TRISC6 = 0;
+    TRISC7 = 0;
 
     Lcd_Init();
     Lcd_Clear();
@@ -2308,6 +2313,7 @@ void main(void) {
     Lcd_Write_String("Welcome to Light");
     Lcd_Set_Cursor(2,1);
     Lcd_Write_String("Powered by SLTC");
+    _delay((unsigned long)((3000)*(8000000/4000.0)));
 
     ADC_Init();
 
@@ -2351,7 +2357,7 @@ void main(void) {
         for(int i = 0; i < 8; i++) {
             int val = ADC_Read(i);
 
-            if(val > 512) {
+            if(val < 700) {
                 for(int j = i; (j <= i + 1) && j < 8; j++) {
                     *led[j].port |= (1 << led[j].pin);
                 }
@@ -2360,9 +2366,8 @@ void main(void) {
                 }
             }
         }
-        _delay((unsigned long)((1000)*(8000000/4000.0)));
+        _delay((unsigned long)((10)*(8000000/4000.0)));
     }
 
-    while(1){};
     return;
 }

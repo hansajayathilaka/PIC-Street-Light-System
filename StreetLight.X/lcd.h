@@ -5,8 +5,8 @@
 #include <string.h>
 #include <stdio.h>
 
-#define RS RD2
-#define EN RD3
+#define RS RC6
+#define EN RC7
 #define D4 RD4
 #define D5 RD5
 #define D6 RD6

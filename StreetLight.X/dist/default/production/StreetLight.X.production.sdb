@@ -3,11 +3,11 @@
 [d edition pro ]
 [d chip 16F877A ]
 [d frameptr 0 ]
-"15 C:\Users\hansa\Work\Waruna\Code\StreetLight.X/analog.h
+"15 C:\Users\hansa\Work\Waruna\StreetLight.X/analog.h
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
 "38
 [v _ADC_Read ADC_Read `(i  1 e 2 0 ]
-"15 C:\Users\hansa\Work\Waruna\Code\StreetLight.X/lcd.h
+"15 C:\Users\hansa\Work\Waruna\StreetLight.X/lcd.h
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "37
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
@@ -31,7 +31,7 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"22 C:\Users\hansa\Work\Waruna\Code\StreetLight.X\main.c
+"77 C:\Users\hansa\Work\Waruna\StreetLight.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "166 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -80,10 +80,10 @@
 [v _GO_DONE GO_DONE `VEb  1 e 0 @250 ]
 "2708
 [v _RC0 RC0 `VEb  1 e 0 @56 ]
-"2759
-[v _RD2 RD2 `VEb  1 e 0 @66 ]
-"2762
-[v _RD3 RD3 `VEb  1 e 0 @67 ]
+"2726
+[v _RC6 RC6 `VEb  1 e 0 @62 ]
+"2729
+[v _RC7 RC7 `VEb  1 e 0 @63 ]
 "2765
 [v _RD4 RD4 `VEb  1 e 0 @68 ]
 "2768
@@ -94,31 +94,35 @@
 [v _RD7 RD7 `VEb  1 e 0 @71 ]
 "2963
 [v _TRISC0 TRISC0 `VEb  1 e 0 @1080 ]
-"22 C:\Users\hansa\Work\Waruna\Code\StreetLight.X\main.c
+"2981
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"2984
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"77 C:\Users\hansa\Work\Waruna\StreetLight.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"78
-[v main@j_165 j `i  1 a 2 75 ]
-"75
+"139
+[v main@j_167 j `i  1 a 2 75 ]
+"136
 [v main@j j `i  1 a 2 73 ]
-"72
+"133
 [v main@val val `i  1 a 2 69 ]
-"71
-[v main@i_161 i `i  1 a 2 77 ]
-"67
+"132
+[v main@i_163 i `i  1 a 2 77 ]
+"128
 [v main@i i `i  1 a 2 71 ]
-[s S97 _Pin 4 `*.39VEuc 1 port 2 0 `i 1 pin 2 2 ]
-"53
-[v main@led led `[8]S97  1 a 32 37 ]
-"41
-[v main@s s `[8]S97  1 a 32 5 ]
-"39
-[v main@F1529 F1529 `[8]S97  1 s 32 F1529 ]
-"41
-[v main@F1531 F1531 `[8]S97  1 s 32 F1531 ]
-"88
+[s S99 _Pin 4 `*.39VEuc 1 port 2 0 `i 1 pin 2 2 ]
+"114
+[v main@led led `[8]S99  1 a 32 37 ]
+"102
+[v main@s s `[8]S99  1 a 32 5 ]
+"100
+[v main@F1529 F1529 `[8]S99  1 s 32 F1529 ]
+"102
+[v main@F1531 F1531 `[8]S99  1 s 32 F1531 ]
+"148
 } 0
-"110 C:\Users\hansa\Work\Waruna\Code\StreetLight.X/lcd.h
+"110 C:\Users\hansa\Work\Waruna\StreetLight.X/lcd.h
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
 "112
@@ -183,7 +187,7 @@
 [v Lcd_Port@a a `uc  1 a 1 0 ]
 "36
 } 0
-"38 C:\Users\hansa\Work\Waruna\Code\StreetLight.X/analog.h
+"38 C:\Users\hansa\Work\Waruna\StreetLight.X/analog.h
 [v _ADC_Read ADC_Read `(i  1 e 2 0 ]
 {
 [v ADC_Read@ANC ANC `i  1 p 2 0 ]

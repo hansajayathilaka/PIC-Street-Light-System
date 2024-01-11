@@ -19,8 +19,68 @@ typedef struct _Pin {
     int pin;
 } Pin;
 
+
+//void main(void) {
+//    
+//    TRISD = 0x00;
+//    TRISC6 = 0;
+//    TRISC7 = 0;
+//    Lcd_Init();
+//    Lcd_Clear();
+//    Lcd_Set_Cursor(1,1);
+//    Lcd_Write_String("Welcome to Light");
+//    Lcd_Set_Cursor(2,1);
+//    Lcd_Write_String("Powered by SLTC");
+//    
+//    ADC_Init();
+//    
+//    TRISA = 0xff; // Mark as input pin
+//    TRISB = 0x00; // Mark as output pin
+//    
+////    RB5 = 1;
+//    PORTB = 0xff;
+//    
+//    while(1) {
+//    Lcd_Clear();
+//        Lcd_Set_Cursor(1,1);
+//        Lcd_Write_String("Welcome to Light");
+//        Lcd_Set_Cursor(2,1);
+//        Lcd_Write_String("Powered by SLTC");
+////        int val1 = ADC_Read(0);
+////        if (val1 < 512) {
+////            RB7 = 1;
+////        } else {
+////            RB7 = 0;
+////        }
+////        
+//    Lcd_Clear();
+//        Lcd_Set_Cursor(1,1);
+//        int val2 = ADC_Read(1);
+//        Lcd_Write_Int(val2);
+////        if (val2 < 512) {
+////            RB6 = 1;
+////        } else {
+////            RB6 = 0;
+////        }
+////        RB5 = 0;
+//        
+////        PORTB = 0x00;
+//        __delay_ms(500);
+//////        RB5 = 1;
+////        
+////        PORTB = 0xff;
+////        __delay_ms(500);
+//    }
+//}
+
+
 void main(void) {
     unsigned int a;
+    
+    // Display Initialization
+    TRISD = 0x00;
+    TRISC6 = 0;
+    TRISC7 = 0;
     
     Lcd_Init();
     Lcd_Clear();
@@ -28,6 +88,7 @@ void main(void) {
     Lcd_Write_String("Welcome to Light");
     Lcd_Set_Cursor(2,1);
     Lcd_Write_String("Powered by SLTC");
+    __delay_ms(3000);
     
     ADC_Init();
     
@@ -71,7 +132,7 @@ void main(void) {
         for(int i = 0; i < S_COUNT; i++) {
             int val = ADC_Read(i);
             
-            if(val > 512) {
+            if(val < 700) {
                 for(int j = i; (j <= i + LED_VARIANT) && j < S_COUNT; j++) {
                     *led[j].port |= (1 << led[j].pin);
                 }
@@ -80,7 +141,7 @@ void main(void) {
                 }
             }
         }
-        __delay_ms(1000);
+        __delay_ms(10);
     }
     
     return;

@@ -11,12 +11,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2774
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 2774: extern volatile __bit RD7 __attribute__((address(0x47)));
 [v _RD7 `Vb ~T0 @X0 0 e@71 ]
-"2759
-[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 2759: extern volatile __bit RD2 __attribute__((address(0x42)));
-[v _RD2 `Vb ~T0 @X0 0 e@66 ]
-"2762
-[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 2762: extern volatile __bit RD3 __attribute__((address(0x43)));
-[v _RD3 `Vb ~T0 @X0 0 e@67 ]
+"2726
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 2726: extern volatile __bit RC6 __attribute__((address(0x3E)));
+[v _RC6 `Vb ~T0 @X0 0 e@62 ]
+"2729
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 2729: extern volatile __bit RC7 __attribute__((address(0x3F)));
+[v _RC7 `Vb ~T0 @X0 0 e@63 ]
 [v F164 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\builtins.h
 [v __delay `JF164 ~T0 @X0 0 e ]
@@ -66,6 +66,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 2222: extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
 [v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
 [p mainexit ]
+"2981
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 2981: extern volatile __bit TRISC6 __attribute__((address(0x43E)));
+[v _TRISC6 `Vb ~T0 @X0 0 e@1086 ]
+"2984
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 2984: extern volatile __bit TRISC7 __attribute__((address(0x43F)));
+[v _TRISC7 `Vb ~T0 @X0 0 e@1087 ]
 "1325
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 1325: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -374,20 +380,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./lcd.h: 38: {
 [f ]
 "39
-[; ;./lcd.h: 39:  RD2 = 0;
-[e = _RD2 -> -> 0 `i `b ]
+[; ;./lcd.h: 39:  RC6 = 0;
+[e = _RC6 -> -> 0 `i `b ]
 "40
 [; ;./lcd.h: 40:  Lcd_Port(a);
 [e ( _Lcd_Port (1 _a ]
 "41
-[; ;./lcd.h: 41:  RD3 = 1;
-[e = _RD3 -> -> 1 `i `b ]
+[; ;./lcd.h: 41:  RC7 = 1;
+[e = _RC7 -> -> 1 `i `b ]
 "42
 [; ;./lcd.h: 42:         _delay((unsigned long)((4)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 4 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "43
-[; ;./lcd.h: 43:         RD3 = 0;
-[e = _RD3 -> -> 0 `i `b ]
+[; ;./lcd.h: 43:         RC7 = 0;
+[e = _RC7 -> -> 0 `i `b ]
 "44
 [; ;./lcd.h: 44: }
 [e :UE 111 ]
@@ -566,32 +572,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./lcd.h: 98:    y = a&0xF0;
 [e = _y -> & -> _a `i -> 240 `i `uc ]
 "99
-[; ;./lcd.h: 99:    RD2 = 1;
-[e = _RD2 -> -> 1 `i `b ]
+[; ;./lcd.h: 99:    RC6 = 1;
+[e = _RC6 -> -> 1 `i `b ]
 "100
 [; ;./lcd.h: 100:    Lcd_Port(y>>4);
 [e ( _Lcd_Port (1 -> >> -> _y `i -> 4 `i `uc ]
 "101
-[; ;./lcd.h: 101:    RD3 = 1;
-[e = _RD3 -> -> 1 `i `b ]
+[; ;./lcd.h: 101:    RC7 = 1;
+[e = _RC7 -> -> 1 `i `b ]
 "102
 [; ;./lcd.h: 102:    _delay((unsigned long)((40)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "103
-[; ;./lcd.h: 103:    RD3 = 0;
-[e = _RD3 -> -> 0 `i `b ]
+[; ;./lcd.h: 103:    RC7 = 0;
+[e = _RC7 -> -> 0 `i `b ]
 "104
 [; ;./lcd.h: 104:    Lcd_Port(temp);
 [e ( _Lcd_Port (1 _temp ]
 "105
-[; ;./lcd.h: 105:    RD3 = 1;
-[e = _RD3 -> -> 1 `i `b ]
+[; ;./lcd.h: 105:    RC7 = 1;
+[e = _RC7 -> -> 1 `i `b ]
 "106
 [; ;./lcd.h: 106:    _delay((unsigned long)((40)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "107
-[; ;./lcd.h: 107:    RD3 = 0;
-[e = _RD3 -> -> 0 `i `b ]
+[; ;./lcd.h: 107:    RC7 = 0;
+[e = _RC7 -> -> 0 `i `b ]
 "108
 [; ;./lcd.h: 108: }
 [e :UE 118 ]
@@ -779,57 +785,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 132 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"22 main.c
-[; ;main.c: 22: void main(void) {
+"77 main.c
+[; ;main.c: 77: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"23
-[; ;main.c: 23:     unsigned int a;
+"78
+[; ;main.c: 78:     unsigned int a;
 [v _a `ui ~T0 @X0 1 a ]
-"25
-[; ;main.c: 25:     Lcd_Init();
+"81
+[; ;main.c: 81:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+"82
+[; ;main.c: 82:     TRISC6 = 0;
+[e = _TRISC6 -> -> 0 `i `b ]
+"83
+[; ;main.c: 83:     TRISC7 = 0;
+[e = _TRISC7 -> -> 0 `i `b ]
+"85
+[; ;main.c: 85:     Lcd_Init();
 [e ( _Lcd_Init ..  ]
-"26
-[; ;main.c: 26:     Lcd_Clear();
+"86
+[; ;main.c: 86:     Lcd_Clear();
 [e ( _Lcd_Clear ..  ]
-"27
-[; ;main.c: 27:     Lcd_Set_Cursor(1,1);
+"87
+[; ;main.c: 87:     Lcd_Set_Cursor(1,1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"28
-[; ;main.c: 28:     Lcd_Write_String("Welcome to Light");
+"88
+[; ;main.c: 88:     Lcd_Write_String("Welcome to Light");
 [e ( _Lcd_Write_String (1 :s 2C ]
-"29
-[; ;main.c: 29:     Lcd_Set_Cursor(2,1);
+"89
+[; ;main.c: 89:     Lcd_Set_Cursor(2,1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"30
-[; ;main.c: 30:     Lcd_Write_String("Powered by SLTC");
+"90
+[; ;main.c: 90:     Lcd_Write_String("Powered by SLTC");
 [e ( _Lcd_Write_String (1 :s 3C ]
-"32
-[; ;main.c: 32:     ADC_Init();
+"91
+[; ;main.c: 91:     _delay((unsigned long)((3000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"93
+[; ;main.c: 93:     ADC_Init();
 [e ( _ADC_Init ..  ]
-"34
-[; ;main.c: 34:     TRISA = 0xff;
+"95
+[; ;main.c: 95:     TRISA = 0xff;
 [e = _TRISA -> -> 255 `i `uc ]
-"35
-[; ;main.c: 35:     TRISB = 0x00;
+"96
+[; ;main.c: 96:     TRISB = 0x00;
 [e = _TRISB -> -> 0 `i `uc ]
-"36
-[; ;main.c: 36:     TRISC0 = 0;
+"97
+[; ;main.c: 97:     TRISC0 = 0;
 [e = _TRISC0 -> -> 0 `i `b ]
-"38
-[; ;main.c: 38:     PORTB = 0x00;
+"99
+[; ;main.c: 99:     PORTB = 0x00;
 [e = _PORTB -> -> 0 `i `uc ]
-"39
-[; ;main.c: 39:     RC0 = 0;
+"100
+[; ;main.c: 100:     RC0 = 0;
 [e = _RC0 -> -> 0 `i `b ]
 [v F1529 `S137 ~T0 @X0 -> 8 `i s ]
 [i F1529
 :U ..
 :U ..
-"41
-[; ;main.c: 41:     Pin s[8] = {
+"102
+[; ;main.c: 102:     Pin s[8] = {
 &U _PORTA
 -> 0 `i
 ..
@@ -869,8 +887,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i F1531
 :U ..
 :U ..
-"53
-[; ;main.c: 53:     Pin led[8] = {
+"114
+[; ;main.c: 114:     Pin led[8] = {
 &U _PORTB
 -> 0 `i
 ..
@@ -906,14 +924,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _led `S137 ~T0 @X0 -> 8 `i a ]
 [e = _led F1531 ]
-"65
-[; ;main.c: 65:     while(1)
+"126
+[; ;main.c: 126:     while(1)
 [e :U 140 ]
-"66
-[; ;main.c: 66:     {
+"127
+[; ;main.c: 127:     {
 {
-"67
-[; ;main.c: 67:         for(int i = 0; i < 8; i++) {
+"128
+[; ;main.c: 128:         for(int i = 0; i < 8; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -921,18 +939,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 143  ]
 [e :U 142 ]
 {
-"68
-[; ;main.c: 68:             *led[i].port = 0x00;
+"129
+[; ;main.c: 129:             *led[i].port = 0x00;
 [e = *U . *U + &U _led * -> -> _i `ui `ux -> -> # *U &U _led `ui `ux 0 -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:         }
+"130
+[; ;main.c: 130:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 142  ]
 [e :U 143 ]
 }
-"71
-[; ;main.c: 71:         for(int i = 0; i < 8; i++) {
+"132
+[; ;main.c: 132:         for(int i = 0; i < 8; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -940,85 +958,77 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 146  ]
 [e :U 145 ]
 {
-"72
-[; ;main.c: 72:             int val = ADC_Read(i);
+"133
+[; ;main.c: 133:             int val = ADC_Read(i);
 [v _val `i ~T0 @X0 1 a ]
 [e = _val ( _ADC_Read (1 _i ]
-"74
-[; ;main.c: 74:             if(val > 512) {
-[e $ ! > _val -> 512 `i 148  ]
+"135
+[; ;main.c: 135:             if(val < 700) {
+[e $ ! < _val -> 700 `i 148  ]
 {
-"75
-[; ;main.c: 75:                 for(int j = i; (j <= i + 1) && j < 8; j++) {
+"136
+[; ;main.c: 136:                 for(int j = i; (j <= i + 1) && j < 8; j++) {
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j _i ]
 [e $U 152  ]
 [e :U 149 ]
 {
-"76
-[; ;main.c: 76:                     *led[j].port |= (1 << led[j].pin);
+"137
+[; ;main.c: 137:                     *led[j].port |= (1 << led[j].pin);
 [e =| *U . *U + &U _led * -> -> _j `ui `ux -> -> # *U &U _led `ui `ux 0 -> << -> 1 `i . *U + &U _led * -> -> _j `ui `ux -> -> # *U &U _led `ui `ux 1 `uc ]
-"77
-[; ;main.c: 77:                 }
+"138
+[; ;main.c: 138:                 }
 }
 [e ++ _j -> 1 `i ]
 [e :U 152 ]
 [e $ && <= _j + _i -> 1 `i < _j -> 8 `i 149  ]
 [e :U 150 ]
 }
-"78
-[; ;main.c: 78:                 for(int j = i; (j >= i - 1) && j >= 0; j--) {
+"139
+[; ;main.c: 139:                 for(int j = i; (j >= i - 1) && j >= 0; j--) {
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j _i ]
 [e $U 156  ]
 [e :U 153 ]
 {
-"79
-[; ;main.c: 79:                     *led[j].port |= (1 << led[j].pin);
+"140
+[; ;main.c: 140:                     *led[j].port |= (1 << led[j].pin);
 [e =| *U . *U + &U _led * -> -> _j `ui `ux -> -> # *U &U _led `ui `ux 0 -> << -> 1 `i . *U + &U _led * -> -> _j `ui `ux -> -> # *U &U _led `ui `ux 1 `uc ]
-"80
-[; ;main.c: 80:                 }
+"141
+[; ;main.c: 141:                 }
 }
 [e -- _j -> 1 `i ]
 [e :U 156 ]
 [e $ && >= _j - _i -> 1 `i >= _j -> 0 `i 153  ]
 [e :U 154 ]
 }
-"81
-[; ;main.c: 81:             }
+"142
+[; ;main.c: 142:             }
 }
 [e :U 148 ]
-"82
-[; ;main.c: 82:         }
+"143
+[; ;main.c: 143:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 8 `i 145  ]
 [e :U 146 ]
 }
-"83
-[; ;main.c: 83:         _delay((unsigned long)((1000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"84
-[; ;main.c: 84:     }
+"144
+[; ;main.c: 144:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"145
+[; ;main.c: 145:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"86
-[; ;main.c: 86:     while(1){};
-[e :U 158 ]
-{
-}
-[e :U 157 ]
-[e $U 158  ]
-[e :U 159 ]
-"87
-[; ;main.c: 87:     return;
+"147
+[; ;main.c: 147:     return;
 [e $UE 138  ]
-"88
-[; ;main.c: 88: }
+"148
+[; ;main.c: 148: }
 [e :UE 138 ]
 }
 [p f _sprintf 8388736 ]
