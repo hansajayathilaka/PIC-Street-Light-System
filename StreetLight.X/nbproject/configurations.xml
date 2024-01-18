@@ -8,6 +8,7 @@
       <itemPath>lcd.h</itemPath>
       <itemPath>led.h</itemPath>
       <itemPath>analog.h</itemPath>
+      <itemPath>usart.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

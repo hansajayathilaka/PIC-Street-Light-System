@@ -21,6 +21,14 @@
 [v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
 "110
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+"6 C:\Users\hansa\Work\Waruna\StreetLight.X/usart.h
+[v _usart_init usart_init `(v  1 e 1 0 ]
+"11
+[v _rx_ready rx_ready `(i  1 e 2 0 ]
+"20
+[v _ser_int ser_int `(v  1 e 1 0 ]
+"42
+[v _rx_val rx_val `(uc  1 e 1 0 ]
 "9 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
@@ -31,14 +39,24 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"77 C:\Users\hansa\Work\Waruna\StreetLight.X\main.c
+"51 C:\Users\hansa\Work\Waruna\StreetLight.X\main.c
 [v _main main `(v  1 e 1 0 ]
+"110
+[v _automaticLights automaticLights `(v  1 e 1 0 ]
+"129
+[v _manualLights manualLights `(v  1 e 1 0 ]
 "166 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "216
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "402
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
+"964
+[v _RCSTA RCSTA `VEuc  1 e 1 @24 ]
+"1059
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1066
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1152
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 "1159
@@ -72,6 +90,10 @@
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1499
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1999
+[v _TXSTA TXSTA `VEuc  1 e 1 @152 ]
+"2080
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2222
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
 "2229
@@ -84,6 +106,8 @@
 [v _RC6 RC6 `VEb  1 e 0 @62 ]
 "2729
 [v _RC7 RC7 `VEb  1 e 0 @63 ]
+"2747
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
 "2765
 [v _RD4 RD4 `VEb  1 e 0 @68 ]
 "2768
@@ -98,29 +122,69 @@
 [v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
 "2984
 [v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
-"77 C:\Users\hansa\Work\Waruna\StreetLight.X\main.c
+"3041
+[v _TXIF TXIF `VEb  1 e 0 @100 ]
+[s S101 _Pin 4 `*.39VEuc 1 port 2 0 `i 1 pin 2 2 ]
+"38 C:\Users\hansa\Work\Waruna\StreetLight.X\main.c
+[v _led led `[8]S101  1 e 32 0 ]
+"51
 [v _main main `(v  1 e 1 0 ]
 {
+"79
+[v main@blu_val blu_val `uc  1 a 1 12 ]
+"108
+} 0
+"6 C:\Users\hansa\Work\Waruna\StreetLight.X/usart.h
+[v _usart_init usart_init `(v  1 e 1 0 ]
+{
+"9
+} 0
+"20
+[v _ser_int ser_int `(v  1 e 1 0 ]
+{
+"26
+} 0
+"42
+[v _rx_val rx_val `(uc  1 e 1 0 ]
+{
+"45
+} 0
+"11
+[v _rx_ready rx_ready `(i  1 e 2 0 ]
+{
+"18
+} 0
+"129 C:\Users\hansa\Work\Waruna\StreetLight.X\main.c
+[v _manualLights manualLights `(v  1 e 1 0 ]
+{
+"135
+[v manualLights@i_197 i `i  1 a 2 7 ]
+"131
+[v manualLights@i i `i  1 a 2 5 ]
+"129
+[v manualLights@state state `i  1 p 2 0 ]
 "139
-[v main@j_167 j `i  1 a 2 75 ]
-"136
-[v main@j j `i  1 a 2 73 ]
-"133
-[v main@val val `i  1 a 2 69 ]
-"132
-[v main@i_163 i `i  1 a 2 77 ]
-"128
-[v main@i i `i  1 a 2 71 ]
-[s S99 _Pin 4 `*.39VEuc 1 port 2 0 `i 1 pin 2 2 ]
-"114
-[v main@led led `[8]S99  1 a 32 37 ]
-"102
-[v main@s s `[8]S99  1 a 32 5 ]
-"100
-[v main@F1529 F1529 `[8]S99  1 s 32 F1529 ]
-"102
-[v main@F1531 F1531 `[8]S99  1 s 32 F1531 ]
-"148
+} 0
+"110
+[v _automaticLights automaticLights `(v  1 e 1 0 ]
+{
+"122
+[v automaticLights@j_193 j `i  1 a 2 6 ]
+"119
+[v automaticLights@j j `i  1 a 2 4 ]
+"116
+[v automaticLights@val val `i  1 a 2 0 ]
+"115
+[v automaticLights@i_189 i `i  1 a 2 8 ]
+"111
+[v automaticLights@i i `i  1 a 2 2 ]
+"127
+} 0
+"38 C:\Users\hansa\Work\Waruna\StreetLight.X/analog.h
+[v _ADC_Read ADC_Read `(i  1 e 2 0 ]
+{
+[v ADC_Read@ANC ANC `i  1 p 2 0 ]
+"50
 } 0
 "110 C:\Users\hansa\Work\Waruna\StreetLight.X/lcd.h
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
@@ -187,13 +251,7 @@
 [v Lcd_Port@a a `uc  1 a 1 0 ]
 "36
 } 0
-"38 C:\Users\hansa\Work\Waruna\StreetLight.X/analog.h
-[v _ADC_Read ADC_Read `(i  1 e 2 0 ]
-{
-[v ADC_Read@ANC ANC `i  1 p 2 0 ]
-"50
-} 0
-"15
+"15 C:\Users\hansa\Work\Waruna\StreetLight.X/analog.h
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
 {
 "22

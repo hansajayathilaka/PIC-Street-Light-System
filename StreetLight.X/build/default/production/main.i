@@ -2289,16 +2289,92 @@ int ADC_Read(int ANC)
 }
 # 11 "main.c" 2
 
+# 1 "./usart.h" 1
 
 
 
 
+
+void usart_init()
+{
+    TRISC6=TRISC7=1;
+}
+
+int rx_ready() {
+    if (RCIF) {
+        RCIF = 0;
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+void ser_int()
+{
+    TXSTA=0x20;
+    RCSTA=0b10010000;
+    SPBRG=17;
+    TXIF=RCIF=0;
+}
+
+void tx(unsigned char a)
+{
+    TXREG=a;
+    while(!TXIF);
+    TXIF = 0;
+}
+
+unsigned char rx_wait()
+{
+    while(!RCIF);
+    RCIF=0;
+    return RCREG;
+}
+
+unsigned char rx_val()
+{
+    return RCREG;
+}
+# 12 "main.c" 2
+
+
+
+
+
+
+void manualLights(int state);
+void automaticLights();
 
 typedef struct _Pin {
     volatile unsigned char *port;
     int pin;
 } Pin;
-# 77 "main.c"
+
+Pin s[8] = {
+    {&PORTA, 0},
+    {&PORTA, 1},
+    {&PORTA, 2},
+    {&PORTA, 3},
+    {&PORTA, 4},
+    {&PORTA, 5},
+    {&PORTE, 0},
+    {&PORTE, 1},
+
+};
+
+Pin led[8] = {
+    {&PORTB, 0},
+    {&PORTB, 1},
+    {&PORTB, 2},
+    {&PORTB, 3},
+    {&PORTB, 4},
+    {&PORTB, 5},
+    {&PORTB, 6},
+    {&PORTB, 7},
+
+};
+
+
 void main(void) {
     unsigned int a;
 
@@ -2306,6 +2382,9 @@ void main(void) {
     TRISD = 0x00;
     TRISC6 = 0;
     TRISC7 = 0;
+
+    usart_init();
+    ser_int();
 
     Lcd_Init();
     Lcd_Clear();
@@ -2324,50 +2403,64 @@ void main(void) {
     PORTB = 0x00;
     RC0 = 0;
 
-    Pin s[8] = {
-        {&PORTA, 0},
-        {&PORTA, 1},
-        {&PORTA, 2},
-        {&PORTA, 3},
-        {&PORTA, 4},
-        {&PORTA, 5},
-        {&PORTE, 0},
-        {&PORTE, 1},
-        {&PORTE, 2},
-    };
-
-    Pin led[8] = {
-        {&PORTB, 0},
-        {&PORTB, 1},
-        {&PORTB, 2},
-        {&PORTB, 3},
-        {&PORTB, 4},
-        {&PORTB, 5},
-        {&PORTB, 6},
-        {&PORTB, 7},
-        {&PORTC, 0},
-    };
+    unsigned char blu_val = 'A';
 
     while(1)
     {
-        for(int i = 0; i < 8; i++) {
-            *led[i].port = 0x00;
+        if (rx_ready()) {
+            blu_val = rx_val();
         }
 
-        for(int i = 0; i < 8; i++) {
-            int val = ADC_Read(i);
+        switch (blu_val) {
+            case 'A':
+                automaticLights();
+                break;
+            case 'O':
+                manualLights(1);
+                break;
+            case 'F':
+                manualLights(0);
+                break;
+            default:
+                Lcd_Set_Cursor(2,1);
+                Lcd_Write_String("Invalid Serial ");
+                Lcd_Write_Char(blu_val);
 
-            if(val < 700) {
-                for(int j = i; (j <= i + 1) && j < 8; j++) {
-                    *led[j].port |= (1 << led[j].pin);
-                }
-                for(int j = i; (j >= i - 1) && j >= 0; j--) {
-                    *led[j].port |= (1 << led[j].pin);
-                }
-            }
         }
+
         _delay((unsigned long)((10)*(8000000/4000.0)));
     }
 
     return;
+}
+
+void automaticLights() {
+    for(int i = 0; i < 8; i++) {
+        *led[i].port = 0x00;
+    }
+
+    for(int i = 0; i < 8; i++) {
+        int val = ADC_Read(i);
+
+        if(val < 700) {
+            for(int j = i; (j <= i + 1) && j < 8; j++) {
+                *led[j].port |= (1 << led[j].pin);
+            }
+            for(int j = i; (j >= i - 1) && j >= 0; j--) {
+                *led[j].port |= (1 << led[j].pin);
+            }
+        }
+    }
+}
+
+void manualLights(int state) {
+    if (state == 1) {
+        for(int i = 0; i < 8; i++) {
+            *led[i].port = 0xff;
+        }
+    } else {
+        for(int i = 0; i < 8; i++) {
+            *led[i].port = 0x00;
+        }
+    }
 }
